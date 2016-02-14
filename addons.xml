@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.program.maniac" name="[COLOR red][B] Team[/B] ManiaC[/COLOR]" version="1.0.0" provider-name="[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
+<addon id="plugin.program.amoboxnotifications" version="4.0.0"
+       name="Team Maniac Notifications" provider-name="AMObox">
+  <requires>
+  	<import addon="xbmc.python" version="2.1.0"/>
+  	<import addon="script.module.addon.common" optional="true" />
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="startup">
+  </extension>
+  <extension point="xbmc.addon.metadata">
+  	<summary>AMObox NEWS</summary>
+  	<description>Recebe as mais recentes novidades da Team Maniac mal abres o Kodi. Cancelar subscriÃ§Ã£o nas definiÃ§Ãµes do Addon.</description>
+  	<disclaimer>NÃ³s nÃ£o assumimos qualquer responsabilidade por eventuais problemas este plugin possa causar.</disclaimer>
+  	<language>en</language>
+  	<platform>all</platform>
+  	<website>http://amobox.comlu.com</website>
+  	<source>http://maniac.comxa.com/repo</source>
+  	<email>amobox.uk@gmail.com</email>
+  </extension>
+</addon>
+
+<addon id="plugin.program.maniac" name="[COLOR red][B] Team[/B] ManiaC[/COLOR]" version="1.0.1" provider-name="[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
+	<import addon="plugin.program.amoboxnotifications" />
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
