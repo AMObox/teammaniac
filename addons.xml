@@ -39,6 +39,24 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.bestipv2" name="BestIPTV2" version="2.0" provider-name="BestIPTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.addon.common" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="init.py">
+        <provides>video executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Best IPTV</summary>
+    <website>http://www.facebook.com/bestiptv.pt</website>
+    <description lang="en">IPTV Addon for BestIPTV</description>
+    <forum>http://pancastv.boards.net/</forum>
+    <disclaimer lang="en">This is a fork from Xtream-Codes</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="repository.pancas" name="Pancas repository" version="1.0.2" provider-name="Mario">
 	<extension point="xbmc.addon.repository" name="Pancas Add-on Repository">
 		<info compressed="false">http://raw.github.com/Sup3Roque/Pancas/master/addons.xml</info>
