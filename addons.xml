@@ -39,7 +39,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.bestipv2" name="BestIPTV2" version="2.0" provider-name="BestIPTV">
+<addon id="plugin.video.bestiptv2" name="BestIPTV2" version="2.0" provider-name="BestIPTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
