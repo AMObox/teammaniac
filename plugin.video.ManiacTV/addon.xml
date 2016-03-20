@@ -18,6 +18,9 @@
     <import addon="script.module.simplejson" /> 
     <import addon="script.common.plugin.cache" version="2.5.2"/>
     <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="plugin.video.specto" />
+    <import addon="plugin.video.SportsDevil" />
+    <import addon="plugin.video.p2psport" />
 
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">

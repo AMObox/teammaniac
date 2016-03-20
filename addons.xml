@@ -91,6 +91,9 @@
     <import addon="script.module.simplejson" />
     <import addon="script.common.plugin.cache" version="2.5.2"/>
     <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="plugin.video.specto" />
+    <import addon="plugin.video.SportsDevil" />
+    <import addon="plugin.video.p2psport" />
 
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
@@ -100,6 +103,80 @@
     <summary lang="en">Lista de Canais e Filmes ManiacTV</summary>
     <description lang="en">Este Addon foi criado e desenvolvido pela[COLOR red][B] Team[/COLOR][/B][COLOR yellow][B]Maniac[/COLOR][/B][COLOR red][B]Pancas[/COLOR][/B][COLOR yellow][B]TV[/COLOR][/B] o mesmo nao se responsabiliza pelo que o uso do mesmo venha a causar.
 	Tudo o que aqui se encontra estÃ¡ ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR red][B] https://www.facebook.com/groups/MANIACTV/[/COLOR][/B]</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.p2psport"
+	name="P2P Sport"
+	version="0.1.4"
+	provider-name="natko1412,Extracsaba">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.mechanize" version="0.2.6"/>
+
+
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Watch p2p sports in Kodi</summary>
+
+    <platform>all</platform>
+    <forum>forums.tvaddons.ag</forum>
+
+  </extension>
+</addon>
+
+<addon id="plugin.video.specto" name="Specto - ... Fork"  version="2016.03.12.2" provider-name="mrknow" >
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.requests" version="1.0.0" />
+		<import addon="script.module.metahandler" />
+		<import addon="repository.filmkodi.com" />
+		<import addon="plugin.video.youtube" optional="true" />
+
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Mrknow fork of ...</summary>
+		<description lang="en">Mrknow fork of ..., support https://github.com/mrknow/filmkodi/issues.</description>
+		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.
+		</disclaimer>
+		<forum>https://github.com/mrknow/filmkodi/issues</forum>
+		<source>http://filmkodi.com/repository/</source>
+		<website>http://filmkodi.com/en/wtyczka-specto-fork-genesis/</website>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon
+  id="plugin.video.SportsDevil"
+  version="2"
+  name="SportsDevil"
+  provider-name="SportsDevil">
+  <requires>
+   <import addon="xbmc.python" version="2.14.0"/>
+   <import addon="script.module.requests" />
+   <import addon="script.module.pydevd" version="4.4.0" optional="true"/>
+  </requires>
+  <extension
+    point="xbmc.python.pluginsource"
+    library="default.py">
+   <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Play videos of different sports streaming sites</summary>
+    <description>Play videos of different sports streaming sites</description>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
     <platform>all</platform>
   </extension>
 </addon>
@@ -139,6 +216,23 @@
     <description lang="en">KODI Wizard With Lighter Aeon Nox Skin</description>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="repository.filmkodi.com" name="Filmkodi.com repository - MRKNOW" version="2.1.0" provider-name="Mrknow">
+	<extension point="xbmc.addon.repository" name="Filmkodi.com Kodi Add-on Repository">
+		<info compressed="false">http://kodi.filmkodi.com/addons.xml</info>
+		<checksum>http://kodi.filmkodi.com/addons.xml.md5</checksum>
+		<datadir zip="true">http://kodi.filmkodi.com/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Install Add-ons  from filmkodi.com</summary>
+		<summary lang="pl">Zainstaluj wtyczki z filmkodi.com</summary>
+		<description lang="en">Add-ons from filmkodi.com (mrknow.pl) repository.</description>
+		<description lang="pl">Wtyczki z nieoficjalnego, repozytorium polskiego mrknow.pl..</description>
+		<disclaimer lang="en">Repository has non-comercial nature. Created by enthusiasts, acting in good faith.</disclaimer>
+		<disclaimer lang="pl">ZawartoÅ›Ä‡ repozytorium ma charakter niekomercyjny, wtyczki tworzone przez pasjonatÃ³w, .</disclaimer>
+		<platform>all</platform>
+	</extension>
 </addon>
 
 <addon id="repository.livetv" name="LiveTV" version="3.0.0" provider-name="TV Direto">
