@@ -74,7 +74,7 @@
 
 <addon id="plugin.video.ManiacTV"
        name="[COLOR yellow][B]Maniac[/COLOR][COLOR red]TV[/B][/COLOR]"
-       version="0.0.2"
+       version="0.0.3"
        provider-name="Coelhon">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
