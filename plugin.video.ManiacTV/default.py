@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import base64
 import urllib
 import urllib2
 import datetime
@@ -19,14 +20,16 @@ except:
 import SimpleDownloader as downloader
 import time
 import requests
-
+from resources.lib.libraries import client
+from resources.lib.libraries import control
 
 net = Net(user_agent='Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.72 Safari/537.36')
 headers = {
     'Accept'    :   'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
     }
 	
-resolve_url=['180upload.com', 'allmyvideos.net', 'bestreams.net', 'clicknupload.com', 'cloudzilla.to', 'movshare.net', 'novamov.com', 'nowvideo.sx', 'videoweed.es', 'daclips.in', 'datemule.com', 'fastvideo.in', 'faststream.in', 'filehoot.com', 'filenuke.com', 'sharesix.com', 'docs.google.com', 'plus.google.com', 'picasaweb.google.com', 'gorillavid.com', 'gorillavid.in', 'grifthost.com', 'hugefiles.net', 'ipithos.to', 'ishared.eu', 'kingfiles.net', 'mail.ru', 'my.mail.ru', 'videoapi.my.mail.ru', 'mightyupload.com', 'mooshare.biz', 'movdivx.com', 'movpod.net', 'movpod.in', 'movreel.com', 'mrfile.me', 'nosvideo.com', 'openload.io', 'played.to', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'primeshare.tv', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'sharerepo.com', 'stagevu.com', 'streamcloud.eu', 'streamin.to', 'thefile.me', 'thevideo.me', 'tusfiles.net', 'uploadc.com', 'zalaa.com', 'uploadrocket.net', 'uptobox.com', 'v-vids.com', 'veehd.com', 'vidbull.com', 'videomega.tv', 'vidplay.net', 'vidspot.net', 'vidto.me', 'vidzi.tv', 'vimeo.com', 'vk.com', 'vodlocker.com', 'xfileload.com', 'xvidstage.com', 'zettahost.tv']
+resolve_url=['180upload.com', 'allmyvideos.net', 'bestreams.net', 'clicknupload.com', 'cloudzilla.to', 'movshare.net', 'novamov.com', 'nowvideo.sx', 'videoweed.es', 'daclips.in', 'datemule.com', 'fastvideo.in', 'faststream.in', 'filehoot.com', 'filenuke.com', 'sharesix.com', 'docs.google.com', 'plus.google.com', 'picasaweb.google.com', 'gorillavid.com', 'gorillavid.in', 'grifthost.com', 'hugefiles.net', 'ipithos.to', 'ishared.eu', 'kingfiles.net', 'mail.ru', 'my.mail.ru', 'videoapi.my.mail.ru', 'mightyupload.com', 'mooshare.biz', 'movdivx.com', 'movpod.net', 'movpod.in', 'movreel.com', 'mrfile.me', 'nosvideo.com', 'openload.co', 'played.to', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'primeshare.tv', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'sharerepo.com', 'stagevu.com', 'streamcloud.eu', 'streamin.to', 'thefile.me', 'thevideo.me', 'tusfiles.net', 'uploadc.com', 'zalaa.com', 'uploadrocket.net', 'uptobox.com', 'v-vids.com', 'veehd.com', 'vidbull.com', 'videomega.tv', 'vidplay.net', 'vidspot.net', 'vidto.me', 'vidzi.tv', 'vimeo.com', 'vk.com', 'vodlocker.com', 'xfileload.com', 'xvidstage.com', 'zettahost.tv']
+#resolve_url2=['openload.co']
 g_ignoreSetResolved=['plugin.video.dramasonline','plugin.video.f4mTester','plugin.video.shahidmbcnet','plugin.video.SportsDevil','plugin.stream.vaughnlive.tv','plugin.video.ZemTV-shani']
 
 class NoRedirection(urllib2.HTTPErrorProcessor):
@@ -34,7 +37,7 @@ class NoRedirection(urllib2.HTTPErrorProcessor):
        return response
    https_response = http_response
        
-Base = 'http://teammaniactv.blogspot.pt/p/color-yellowb-maniacbcolorcolor.html' 
+Base = 'http://teammaniactv.blogspot.pt/p/color-yellowb-maniacbcolorcolor_19.html' 
 
 addon = xbmcaddon.Addon('plugin.video.ManiacTV') 
 addon_version = addon.getAddonInfo('version')        
@@ -47,6 +50,9 @@ REV = os.path.join(profile, 'list_revision')
 icon = os.path.join(home, 'icon.png')
 FANART = os.path.join(home, 'fanart.jpg')
 source_file = os.path.join(profile, 'source_file')
+
+print "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+print source_file
 functions_dir = profile
 
 downloader = downloader.SimpleDownloader()
@@ -61,7 +67,7 @@ else: SOURCES = []
 
 def addon_log(string):
     if debug == 'true':
-        xbmc.log("[plugin.video.ManiacTV 0.0.1]: %s" %(addon_version, string)) 
+        xbmc.log("[plugin.video.ManiacTV 0.0.2]: %s" %(addon_version, string)) 
 
 
 def makeRequest(url, headers=None):
@@ -390,7 +396,140 @@ def getData(url,fanart):
     if SetViewLayout == "Thumbnail":
        SetViewThumbnail()
 
-	
+def base10toN(num,n):
+    num_rep={10:'a',
+         11:'b',
+         12:'c',
+         13:'d',
+         14:'e',
+         15:'f',
+         16:'g',
+         17:'h',
+         18:'i',
+         19:'j',
+         20:'k',
+         21:'l',
+         22:'m',
+         23:'n',
+         24:'o',
+         25:'p',
+         26:'q',
+         27:'r',
+         28:'s',
+         29:'t',
+         30:'u',
+         31:'v',
+         32:'w',
+         33:'x',
+         34:'y',
+         35:'z'}
+    new_num_string=''
+    current=num
+    while current!=0:
+        remainder=current%n
+        if 36>remainder>9:
+            remainder_string=num_rep[remainder]
+        elif remainder>=36:
+            remainder_string='('+str(remainder)+')'
+        else:
+            remainder_string=str(remainder)
+        new_num_string=remainder_string+new_num_string
+        current=current/n
+    return new_num_string
+
+def resolve(url):
+    try:
+        control.log('[openload] - 1 %s' % url)
+        if check(url) == False: return
+        control.log('[openload] - 2 %s' % url)
+        id = re.compile('//.+?/(?:embed|f)/([0-9a-zA-Z-_]+)').findall(url)[0]
+        myurl = 'https://openload.co/embed/%s' % id
+        result = client.request(myurl)
+
+        # decodeOpenLoad made by mortael - for me You are master:)
+        def decodeOpenLoad(html):
+            aastring = re.search(r"<video(?:.|\s)*?<script\s[^>]*?>((?:.|\s)*?)</script", html, re.DOTALL | re.IGNORECASE).group(1)
+
+            aastring = aastring.replace("(ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((c^_^o)-(c^_^o))+ (-~0)+ (ﾟДﾟ) ['c']+ (-~-~1)+","")
+            aastring = aastring.replace("((ﾟｰﾟ) + (ﾟｰﾟ) + (ﾟΘﾟ))", "9")
+            aastring = aastring.replace("((ﾟｰﾟ) + (ﾟｰﾟ))","8")
+            aastring = aastring.replace("((ﾟｰﾟ) + (o^_^o))","7")
+            aastring = aastring.replace("((o^_^o) +(o^_^o))","6")
+            aastring = aastring.replace("((ﾟｰﾟ) + (ﾟΘﾟ))","5")
+            aastring = aastring.replace("(ﾟｰﾟ)","4")
+            aastring = aastring.replace("((o^_^o) - (ﾟΘﾟ))","2")
+            aastring = aastring.replace("(o^_^o)","3")
+            aastring = aastring.replace("(ﾟΘﾟ)","1")
+            aastring = aastring.replace("(+!+[])","1")
+            aastring = aastring.replace("(c^_^o)","0")
+            aastring = aastring.replace("(0+0)","0")
+            aastring = aastring.replace("(ﾟДﾟ)[ﾟεﾟ]","\\")
+            aastring = aastring.replace("(3 +3 +0)","6")
+            aastring = aastring.replace("(3 - 1 +0)","2")
+            aastring = aastring.replace("(!+[]+!+[])","2")
+            aastring = aastring.replace("(-~-~2)","4")
+            aastring = aastring.replace("(-~-~1)","3")
+            aastring = aastring.replace("(-~0)","1")
+            aastring = aastring.replace("(-~1)","2")
+            aastring = aastring.replace("(-~3)","4")
+            aastring = aastring.replace("(0-0)","0")
+
+            decodestring = re.search(r"\\\+([^(]+)", aastring, re.DOTALL | re.IGNORECASE).group(1)
+            decodestring = "\\+"+ decodestring
+            decodestring = decodestring.replace("+","")
+            decodestring = decodestring.replace(" ","")
+
+            decodestring = decode(decodestring)
+            decodestring = decodestring.replace("\\/","/")
+
+            if 'toString' in decodestring:
+                base = re.compile(r"toString\(a\+(\d+)", re.DOTALL | re.IGNORECASE).findall(decodestring)[0]
+                base = int(base)
+                match = re.compile(r"(\(\d[^)]+\))", re.DOTALL | re.IGNORECASE).findall(decodestring)
+                for repl in match:
+                    match1 = re.compile(r"(\d+),(\d+)", re.DOTALL | re.IGNORECASE).findall(repl)
+                    base2 = base + int(match1[0][0])
+                    repl2 = base10toN(int(match1[0][1]),base2)
+                    decodestring = decodestring.replace(repl,repl2)
+                decodestring = decodestring.replace("+","")
+                decodestring = decodestring.replace("\"","")
+                videourl = re.search(r"(http[^\}]+)", decodestring, re.DOTALL | re.IGNORECASE).group(1)
+            else:
+                videourl = re.search(r"vr\s?=\s?\"|'([^\"']+)", decodestring, re.DOTALL | re.IGNORECASE).group(1)
+            return videourl
+
+        def decode(encoded):
+            for octc in (c for c in re.findall(r'\\(\d{2,3})', encoded)):
+                encoded = encoded.replace(r'\%s' % octc, chr(int(octc, 8)))
+            return encoded.decode('utf8')
+        # end https://github.com/whitecream01/WhiteCream-V0.0.1/blob/master/plugin.video.uwc/plugin.video.uwc-1.0.51.zip?raw=true
+
+
+        videoUrl = decodeOpenLoad(result)
+        control.log('[openload] - 1 %s' % url)
+
+        return videoUrl
+    except:
+        #print("dupa")
+        return
+
+
+
+def check(url):
+    try:
+        ifstream = re.search('//.+?/(?:embed|f)/([0-9a-zA-Z-_]+)',(url)[0])
+        if ifstream: return True
+        id = re.compile('//.+?/(?:embed|f)/([0-9a-zA-Z-_]+)').findall(url)[0]
+        url = 'https://openload.co/embed/%s/' % id
+
+        result = client.request(url)
+        if result == None: return False
+        if '>We are sorry!<' in result: return False
+        return True
+    except:
+        return False
+       
+       
 	
 
 def parse_m3u(data):
@@ -399,6 +538,7 @@ def parse_m3u(data):
     total = len(match)
     print 'total m3u links',total
     for other,channel_name,stream_url in match:
+        
         if 'tvg-logo' in other:
             thumbnail = re_me(other,'tvg-logo=[\'"](.*?)[\'"]')
             if thumbnail:
@@ -415,6 +555,9 @@ def parse_m3u(data):
             
         else:
             thumbnail = ''
+        if 'openload' in other:
+            stream_url = resolve(stream_url)
+        
         if 'type' in other:
             mode_type = re_me(other,'type=[\'"](.*?)[\'"]')
             if mode_type == 'yt-dl':
@@ -858,7 +1001,9 @@ def getItems(items,fanart):
 	                        if regexs:
 	                            playlist.append(i+'&regexs='+regexs)
 	                        elif  any(x in i for x in resolve_url) and  i.startswith('http'):
-	                            playlist.append(i+'&mode=19')                            
+	                            playlist.append(i+'&mode=66') 
+                            #elif  any(x in i for x in resolve_url2) and  i.startswith('http'):
+                                #playlist.append(i+'&mode=66') 
                         else:
                             playlist.append(i)
                     if addon.getSetting('add_playlist') == "false":                    
@@ -1945,6 +2090,7 @@ def urlsolver(url):
         else:
             resolver = resolved
     return resolver
+    
 def play_playlist(name, mu_playlist):
         import urlparse
         if addon.getSetting('ask_playlist_items') == 'true':
@@ -2209,7 +2355,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
             contextMenu.append(('[COLOR white]!!Download Currently Playing!![/COLOR]','XBMC.RunPlugin(%s?url=%s&mode=21&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))           
         elif  any(x in url for x in resolve_url) and  url.startswith('http'):
-            mode = '19'
+            mode = '66'
           
             contextMenu.append(('[COLOR white]!!Download Currently Playing!![/COLOR]','XBMC.RunPlugin(%s?url=%s&mode=21&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))           
@@ -2559,3 +2705,8 @@ elif mode==53:
     addon_log("Requesting JSON-RPC Items")
     pluginquerybyJSON(url)
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
+    
+elif mode==66:
+	addon_log("UPAUPAUPAUPAUPA")
+	playsetresolved (resolve(url),name,iconimage,True)    
+    
