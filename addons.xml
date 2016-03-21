@@ -59,12 +59,11 @@
        version="0.0.3"
        provider-name="Coelhon">
   <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="xbmc.python" version="2.24.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
     <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
     <import addon="script.module.requests" />
     <import addon="script.module.httplib2" />
     <import addon="script.module.youtube.dl" optional="true"/>
@@ -76,7 +75,6 @@
 	<import addon="plugin.video.specto" />
     <import addon="plugin.video.SportsDevil" />
     <import addon="plugin.video.p2psport" />
-
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
