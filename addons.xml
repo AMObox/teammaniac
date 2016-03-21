@@ -142,7 +142,7 @@
 
 <addon
   id="plugin.video.SportsDevil"
-  version="2"
+  version="2.2"
   name="SportsDevil"
   provider-name="SportsDevil">
   <requires>
