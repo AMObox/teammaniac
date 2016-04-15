@@ -141,10 +141,10 @@ def findContentRefreshLink(page, data):
     if links:
         return links[0]
     
-    regex = 'window.location\s*=\s*[\'"]([^\'"]+)[\'"]'
-    links = regexUtils.findall(data, regex)
-    if links:
-        return links[0]
+    #regex = 'window.location\s*=\s*[\'"]([^\'"]+)[\'"]'
+    #links = regexUtils.findall(data, regex)
+    #if links:
+        #return links[0]
     
     regex = 'frame\s*scrolling=\"auto\"\s*noresize\s*src\s*=\s*[\'"]([^\'"]+)[\'"]'
     links = regexUtils.findall(data, regex)
@@ -179,7 +179,7 @@ def findVideoFrameLink(page, data):
     if not frames:
         return None
     
-    iframes = regexUtils.findall(data, "(frame(?![^>]*cbox\.ws)(?![^>]*Publi)(?![^>]*dailymotion)(?![^>]*blacktvlive\.)(?![^>]*chat\d*\.\w+)(?![^>]*ad122m)(?![^>]*adshell)(?![^>]*capacanal)(?![^>]*waframedia)(?![^>]*Beba.tv/embed)(?![^>]*maxtags)(?![^>]*s/a1\.php)(?![^>]*right-sidebar)[^>]*\sheight\s*=\s*[\"']*([\%\d]+)(?:px)?[\"']*[^>]*>)")
+    iframes = regexUtils.findall(data, "(frame(?![^>]*cbox\.ws)(?![^>]*Publi)(?![^>]*dailymotion)(?![^>]*guide\.)(?![^>]*chat\d*\.\w+)(?![^>]*ad122m)(?![^>]*adshell)(?![^>]*capacanal)(?![^>]*waframedia)(?![^>]*Beba.tv/embed)(?![^>]*maxtags)(?![^>]*s/a1\.php)(?![^>]*right-sidebar)[^>]*\sheight\s*=\s*[\"']*([\%\d]+)(?:px)?[\"']*[^>]*>)")
 
     if iframes:
         for iframe in iframes:
