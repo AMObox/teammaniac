@@ -56,7 +56,7 @@
 
 <addon id="plugin.video.ManiacTV"
        name="[COLOR yellow][B]Maniac[/COLOR][COLOR red]TV[/B][/COLOR]"
-       version="1.0.6"
+       version="2016.04.20"
        provider-name="Coelhon">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -84,6 +84,7 @@
     <description lang="en">Este Addon foi criado e desenvolvido pela[COLOR red][B] Team[/COLOR][/B][COLOR yellow][B]Maniac[/COLOR][/B]o mesmo nao se responsabiliza pelo que o uso do mesmo venha a causar.
 	Tudo o que aqui se encontra estÃ¡ ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR red][B] https://www.facebook.com/groups/MANIACTV/[/COLOR][/B]</description>
     <platform>all</platform>
+	 <broken>RiP</broken>
   </extension>
 </addon>
 
