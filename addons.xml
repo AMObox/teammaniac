@@ -13,8 +13,8 @@
   </extension>
   <extension point="xbmc.addon.metadata">
   	<summary>AMObox NEWS</summary>
-  	<description>Recebe as mais recentes novidades da Team Maniac mal abres o Kodi. Cancelar subscriÃ§Ã£o nas definiÃ§Ãµes do Addon.</description>
-  	<disclaimer>NÃ³s nÃ£o assumimos qualquer responsabilidade por eventuais problemas este plugin possa causar.</disclaimer>
+  	<description>Recebe as mais recentes novidades da Team Maniac mal abres o Kodi. Cancelar subscrição nas definições do Addon.</description>
+  	<disclaimer>Nós não assumimos qualquer responsabilidade por eventuais problemas este plugin possa causar.</disclaimer>
   	<language>en</language>
   	<platform>all</platform>
   	<website>http://amobox.comlu.com</website>
@@ -93,7 +93,7 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Lista de Canais e Filmes PsychoTV</summary>
     <description lang="en">Este Addon foi criado e desenvolvido pela[COLOR white][B] Team[/COLOR][/B][COLOR lawngreen][B]Maniac[/COLOR][/B] o mesmo nao se responsabiliza pelo que o uso do mesmo venha a causar.
-	Tudo o que aqui se encontra estÃ¡ ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR red][B] https://www.facebook.com/groups/MANIACTV/[/COLOR][/B]</description>
+	Tudo o que aqui se encontra está ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR red][B] https://www.facebook.com/groups/MANIACTV/[/COLOR][/B]</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -147,7 +147,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.tvdireto" name="LiveTV" version="1.0.5" provider-name="TV Direto">
+<addon id="plugin.video.tvdireto" name="LiveTV" version="1.0.6" provider-name="TV Direto">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -182,7 +182,7 @@
 		<description lang="en">Add-ons from filmkodi.com (mrknow.pl) repository.</description>
 		<description lang="pl">Wtyczki z nieoficjalnego, repozytorium polskiego mrknow.pl..</description>
 		<disclaimer lang="en">Repository has non-comercial nature. Created by enthusiasts, acting in good faith.</disclaimer>
-		<disclaimer lang="pl">ZawartoÅ›Ä‡ repozytorium ma charakter niekomercyjny, wtyczki tworzone przez pasjonatÃ³w, .</disclaimer>
+		<disclaimer lang="pl">Zawartość repozytorium ma charakter niekomercyjny, wtyczki tworzone przez pasjonatów, .</disclaimer>
 		<platform>all</platform>
 	</extension>
 </addon>
@@ -195,7 +195,7 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Pancas Repo</summary>
-		<description>TV para todos sempre ao melhor preÃ§o</description>
+		<description>TV para todos sempre ao melhor preço</description>
 		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
