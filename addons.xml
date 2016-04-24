@@ -13,8 +13,8 @@
   </extension>
   <extension point="xbmc.addon.metadata">
   	<summary>AMObox NEWS</summary>
-  	<description>Recebe as mais recentes novidades da Team Maniac mal abres o Kodi. Cancelar subscrição nas definições do Addon.</description>
-  	<disclaimer>Nós não assumimos qualquer responsabilidade por eventuais problemas este plugin possa causar.</disclaimer>
+  	<description>Recebe as mais recentes novidades da Team Maniac mal abres o Kodi. Cancelar subscriÃ§Ã£o nas definiÃ§Ãµes do Addon.</description>
+  	<disclaimer>NÃ³s nÃ£o assumimos qualquer responsabilidade por eventuais problemas este plugin possa causar.</disclaimer>
   	<language>en</language>
   	<platform>all</platform>
   	<website>http://amobox.comlu.com</website>
@@ -37,6 +37,21 @@
     <description lang="en">[COLOR red][B]Team[/B] ManiaC[/COLOR] Wizard provides easy access to [COLOR red][B]Team[/B] ManiaC[/COLOR] Builds, Maintenance Tools and [COLOR yellow]APK Store[/COLOR].</description>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="plugin.video.f4mTester" version="2.2.4" name="f4mTester" provider-name="Shani">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.video.F4mProxy" version="2.2.3"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>f4mTester</summary>
+        <description></description>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="plugin.video.p2psport"
@@ -93,7 +108,7 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Lista de Canais e Filmes PsychoTV</summary>
     <description lang="en">Este Addon foi criado e desenvolvido pela[COLOR white][B] Team[/COLOR][/B][COLOR lawngreen][B]Maniac[/COLOR][/B] o mesmo nao se responsabiliza pelo que o uso do mesmo venha a causar.
-	Tudo o que aqui se encontra está ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR red][B] https://www.facebook.com/groups/MANIACTV/[/COLOR][/B]</description>
+	Tudo o que aqui se encontra estÃ¡ ao alcance de qualquer um na internet...Para mais novidades adere ao grupo[COLOR red][B] https://www.facebook.com/groups/MANIACTV/[/COLOR][/B]</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -182,7 +197,7 @@
 		<description lang="en">Add-ons from filmkodi.com (mrknow.pl) repository.</description>
 		<description lang="pl">Wtyczki z nieoficjalnego, repozytorium polskiego mrknow.pl..</description>
 		<disclaimer lang="en">Repository has non-comercial nature. Created by enthusiasts, acting in good faith.</disclaimer>
-		<disclaimer lang="pl">Zawartość repozytorium ma charakter niekomercyjny, wtyczki tworzone przez pasjonatów, .</disclaimer>
+		<disclaimer lang="pl">ZawartoÅ›Ä‡ repozytorium ma charakter niekomercyjny, wtyczki tworzone przez pasjonatÃ³w, .</disclaimer>
 		<platform>all</platform>
 	</extension>
 </addon>
@@ -195,7 +210,7 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Pancas Repo</summary>
-		<description>TV para todos sempre ao melhor preço</description>
+		<description>TV para todos sempre ao melhor preÃ§o</description>
 		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
@@ -212,6 +227,26 @@
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Install Add-ons from RenegadesTV</summary>
 		<description lang="en">Download and install add-ons from RenegadesTV repository.</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.shani" name="Shanis Addon Repository" version="2.8" provider-name="Shani">
+	<extension point="xbmc.addon.repository" name="Shanis Addon Repository">
+    <dir>
+            <info compressed="false">https://raw.github.com/Shani-08/ShaniXBMCWork2/master/addons.xml</info>
+            <checksum>https://raw.github.com/Shani-08/ShaniXBMCWork2/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.github.com/Shani-08/ShaniXBMCWork2/master/zips</datadir>
+    </dir>
+
+    <info compressed="false">https://offshoregit.com/Shani-08/main/addons.xml</info>
+    <checksum>https://offshoregit.com/Shani-08/main/addons.xml.md5</checksum>
+    <datadir zip="true">https://offshoregit.com/Shani-08/main/zips</datadir>
+
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Addons related to XBMC for Zemtv etc</summary>
+		<description>Go though the plugins and see what you like</description>
 		<platform>all</platform>
 	</extension>
 </addon>
